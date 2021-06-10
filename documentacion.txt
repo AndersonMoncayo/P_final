@@ -72,7 +72,26 @@ Documentacion
 
 /sesiones/<id_sesion>/usuarios
     method='GET':
-        Lista los estudiantes que deberan asistir a una sesion en especifico, pasandole como parametro el id se la sesion(<id_sesion>)
+        Lista los estudiantes que deberan asistir a una sesion en especifico, pasandole como parametro el id se la sesion(<id_sesion>), entre los datos que retornara habra un campo llamado asistencia en donde inialmente tendra una url mediante la cual permitira registrar la asistencia a cada estudiante: ejemplo:
+        {
+            "apellido": "str",
+            "asistencia": "http://127.0.0.1:5000/sesiones/20/usuarios" method='PUT'
+                           a esta url que retorna de le enviara la verificacion:
+                            {
+	                            "verificacion":0  //No asistio 
+                            } o
+                            {
+	                            "verificacion":1 //asistio   
+                            }
+                            
+            "email": "ecal@gmail.com",
+            "id": 3,
+            "identificacion": "444",
+            "nombre": "cam",
+            "semestre": 3,
+            "telefono": "3223"
+        }
+
 
 
 
