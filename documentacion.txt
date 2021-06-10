@@ -1,0 +1,78 @@
+Documentacion
+
+/materias
+    method='GET': 
+        Listar materias.
+
+    method='POST':
+        Registrar materia enviandole los siguientes datos:
+        {
+	    "nombre":"str",
+	    "semestre": int
+        }
+
+
+/usuarios
+    method='GET': 
+        Listar todos los estudiantes.
+    
+    method='POST':
+        Registrar estudiante enviandole los siguientes datos:
+        {
+	        "semestre":int,
+	        "identificacion": "str",
+	        "nombre": "str",
+	        "apellido": "str",
+            "email": "str",
+            "telefono": "str"
+        }
+/usuarios/<id_usuario>
+    method='PUT':
+        Editar los datos de un estudiante en especifico pasandole como paramatro el id(<id_usuario>) y enviandole los nuevos datos:
+        {
+	        "semestre":int,
+	        "identificacion": "str",
+	        "nombre": "str",
+	        "apellido": "str",
+            "email": "str",
+            "telefono": "str"
+        }
+
+    method='DELETE':
+        Eliminar un estudiante pasandole como parametro el id(<id_usuario>), tener en cuenta antes de elminar un estudiante definitivamente, que este no este matriculado en ninguna materia.
+
+
+
+
+/materias/<id_materia>/usuarios
+    method='GET':
+        Listar los estudiantes registrados en una materia en especifico pasandole como paramatro el id de la misma(<id_materia>).
+
+    
+/usuarios/<id_usuario>/materias/<id_materia>
+    method='POST':
+        Matricular un estudiante en una materia en especifico, pasandole como parametros el id del estudiante(<id_usuario>) y el id de la materia(<id_materia>).
+
+    method='DELETE':
+        Eliminar un estudiante de una materia en especifico, pasandole como parametros el id del estudiante(<id_usuario>) y el id de la materia(<id_materia>).
+
+/sesiones/<id_materia>
+    method='GET'.
+        Listar las sesiones de una materia en especifico, pasandole como parametro el id de la materia(<id_materia>).
+
+    method='POST':
+        Registrar una sesion a una materia en especifico, pasandole como parametro el id de la materia(<id_materia>) y enviandole los siguientes datos:
+        {
+	        "nombre": "str",
+	        "fecha": "yyyy-mm-dd",
+	        "inicia": "hh:mm:ss",
+	        "termina": "hh:mm:ss"
+        }
+
+
+/sesiones/<id_sesion>/usuarios
+    method='GET':
+        Lista los estudiantes que deberan asistir a una sesion en especifico, pasandole como parametro el id se la sesion(<id_sesion>)
+
+
+
